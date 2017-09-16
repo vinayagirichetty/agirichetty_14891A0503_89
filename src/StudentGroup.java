@@ -106,6 +106,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+		ArrayList <Student>al = new ArrayList<Student>();
+		al.remove(index);
 	}
 
 	@Override
