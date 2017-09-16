@@ -148,6 +148,34 @@ if(student==null||index<0||index>=this.students.length) {
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+			int flag=-1;
+		if(student==null) {
+			throw new IllegalArgumentException();
+		}
+		else {
+			for(int i=0;i<this.students.length;i++){
+				if(this.students[i]==student){
+					flag=i;
+
+
+				}
+
+			}
+
+
+		}
+
+			if(flag>0){
+				for (int i1=flag+1;i1<this.students.length;i1++){
+					ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(this.students));
+					al.remove(i1);
+					this.students = al.toArray(this.students);
+				}
+
+		}
+		else{
+			throw new IllegalArgumentException("Student not exist");
+		}
 	}
 
 	@Override
