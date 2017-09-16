@@ -226,18 +226,7 @@ if(student==null||index<0||index>=this.students.length) {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
-		   Student temp;
-		for(int i=0;i<students.length-1;i++){
-			for(int j=0;j<students.length-i-1;j++){
-				if(students[j].getId()>students[j+1].getId()){
-					temp=students[j];
-					students[j]=students[j+1];
-					students[j+1]=temp;
-
-
-				}
-			}
-		}
+		Arrays.sort(students);
 	}
 
 	@Override
