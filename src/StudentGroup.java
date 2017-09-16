@@ -112,7 +112,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
-		if (index<null ) throw new IllegalArgumentException();
+		if (index<0 ) throw new IllegalArgumentException();
 		else {
 		ArrayList <Student>al = new ArrayList<Student>();
 		al.remove(index);
