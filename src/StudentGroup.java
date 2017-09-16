@@ -184,9 +184,9 @@ if(student==null||index<0||index>=this.students.length) {
 
 			if(flag>0){
 				for (int i1=0;i1<flag;i1++){
-					List<Student> list = new ArrayList<Student>(Arrays.asList(this.students));
-					list.remove(i1);
-					this.students = list.toArray(this.students);
+					ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(this.students));
+					al.remove(i1);
+					this.students = al.toArray(this.students);
 				}
 			}
 
