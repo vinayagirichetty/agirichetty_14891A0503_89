@@ -138,10 +138,15 @@ if(student==null||index<0||index>=this.students.length) {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
-		ArrayList <Student>al = new ArrayList<Student>();
-		if(index < 0 || index >= students.length) throw new IllegalArgumentException();
+		if(index<0||index>=this.students.length){
+			throw new IllegalArgumentException();
+		}
 		else {
-		al.remove(index);
+			for (int i=index+1;i<this.students.length;i++){
+				ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(this.students));
+				al.remove(i);
+				this.students = al.toArray(this.students);
+			}
 		}
 	}
 
