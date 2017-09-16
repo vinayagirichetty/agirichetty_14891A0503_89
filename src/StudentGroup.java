@@ -14,14 +14,8 @@ import java.util.Date;
  * DO NOT PUT any classes into packages
  *
  */
- class IllegalArgumentException extends Exception
- {
- public IllegalArgumentException()
- {
 
- }
- }
-public class StudentGroup extends IllegalArgumentException implements StudentArrayOperation {
+public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
 
@@ -42,22 +36,19 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
-	if(students==null)
-		throw new IllegalArgumentException();
-		else {
-            this.students=students;
+		if (students == null) {
+			throw new IllegalArgumentException();
 		}
-
+		else this.students = students;
 	}
 
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
 		if(index < 0 || index >= students.length) throw new IllegalArgumentException();
-		else {
-                return students[index];
+		else return students[index];
 	}
-	}
+
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
@@ -70,6 +61,7 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+		//Still to be Reviewed
 		if (student == null ) throw new IllegalArgumentException();
 		else {
 			ArrayList <Student>al = new ArrayList<Student>();
@@ -144,12 +136,11 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 		else {
 			Student []dob = new Student[students.length];
 			int count =0;
-			for(int i=0;i<students.length;i++){
+			for(int i=0;i<students.length;i++)
 			if(students[i].getBirthDate().compareTo(date) == 0) {
 				dob[count] = students[i];
 				count++;
 			}
-		}
 			Student []st = new Student[count];
 
 			for(int i=0;i<count;i++) {
@@ -180,13 +171,7 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
-		// Add your implementation here
-		/*Student st[] = new Student[students.length];
-		int count=0;
-		for(int i=0;i<students.length;i++) if(students[i].getBirthDate()getClass().getAge() == age) {
-			st[count] = students[i];
-			count++;
-		}*/
+
 		return null;
 	}
 
@@ -200,27 +185,25 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 				d = students[i].getAvgMark();
 			}
 		}
-		Student []st = new Student[students.length];
+		Student []stud = new Student[students.length];
 		int count=0;
 		for(int i=0;i<students.length;i++) {
-			if(d == students[i].getAvgMark()) {st[count] = students[i]; count++;}
+			if(d == students[i].getAvgMark()) {stud[count] = students[i]; count++;}
 		}
-		Student []coun = new Student[count];
+		Student []st = new Student[count];
 		for(int i=0;i<count;i++) {
-			coun[i] = st[i];
+			st[i] = stud[i];
 		}
-		return coun;
+		return st;
 	}
 
 	@Override
 	public Student getNextStudent(Student student) {
-		//Correct
 		// Add your implementation here
 		if (student == null) throw new IllegalArgumentException();
-		else{
+		else
 		for(int i=0;i<students.length;i++) {
 			if(student.getId() == students[i].getId()) return students[i+1];
-		}
 		}
 		return null;
 	}
