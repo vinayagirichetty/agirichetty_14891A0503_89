@@ -116,6 +116,23 @@ if(student==null||index<0||index>=this.students.length) {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+				if(student==null) {
+			throw new IllegalArgumentException();
+		}
+		else {
+			for(int i=0;i<this.students.length;i++){
+				if(students[i]==student){
+					ArrayList<Student> al = new ArrayList<Student>(Arrays.asList(this.students));
+					al.remove(student);
+					this.students = al.toArray(this.students);
+					break;
+				}
+				else {
+					throw new IllegalArgumentException("Student not exist");
+				}
+			}
+
+		}
 	}
 
 	@Override
