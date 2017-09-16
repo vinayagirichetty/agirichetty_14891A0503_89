@@ -106,16 +106,17 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
-		/*if (student == null ) throw new IllegalArgumentException();
-		else {
-		ArrayList <Student>al = new ArrayList<Student>();
-		al.remove(index);
-		}*/
+
 	}
 
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+		if (index<null ) throw new IllegalArgumentException();
+		else {
+		ArrayList <Student>al = new ArrayList<Student>();
+		al.remove(index);
+		}
 	}
 
 	@Override
