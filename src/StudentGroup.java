@@ -42,48 +42,34 @@ public class StudentGroup extends IllegalArgumentException implements StudentArr
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
-		try{
 	if(students==null)
 		throw new IllegalArgumentException();
 		else {
             this.students=students;
 		}
-}
-catch(IllegalArgumentException e)
-{}
 
 	}
 
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
-		try{
 		if(index < 0 || index >= students.length) throw new IllegalArgumentException();
 		else {
                 return students[index];
 	}
-		}
-   catch(IllegalArgumentException e)
-{}
-
 	}
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
-		try{
 		if(index < 0 || index >= students.length) throw new IllegalArgumentException();
 		else {
 			students[index] = student;
 		}
-		}
-catch(IllegalArgumentException e)
-{}
 	}
 
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
-		try{
 		if (student == null ) throw new IllegalArgumentException();
 		else {
 			ArrayList <Student>al = new ArrayList<Student>();
@@ -92,15 +78,11 @@ catch(IllegalArgumentException e)
 			students = null;
 			students = (Student[]) al.toArray();
 		}
-		}
-catch(IllegalArgumentException e)
-{}
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-		try{
 		if (student == null ) throw new IllegalArgumentException();
 		else {
 			ArrayList <Student>al = new ArrayList<Student>();
@@ -109,9 +91,6 @@ catch(IllegalArgumentException e)
 			students = null;
 			students = (Student[]) al.toArray();
 		}
-		}
-catch(IllegalArgumentException e)
-{}
 
 	}
 
@@ -161,7 +140,6 @@ catch(IllegalArgumentException e)
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		try{
 		if (date == null) throw new IllegalArgumentException();
 		else {
 			Student []dob = new Student[students.length];
@@ -179,9 +157,6 @@ catch(IllegalArgumentException e)
 			}
 			return st;
 		}
-		}
-catch(IllegalArgumentException e)
-{}
 
 	}
 
@@ -241,17 +216,12 @@ catch(IllegalArgumentException e)
 	public Student getNextStudent(Student student) {
 		//Correct
 		// Add your implementation here
-		try{
 		if (student == null) throw new IllegalArgumentException();
 		else{
 		for(int i=0;i<students.length;i++) {
 			if(student.getId() == students[i].getId()) return students[i+1];
 		}
 		}
-		}
-catch(IllegalArgumentException e)
-{}
-
 		return null;
 	}
 }
