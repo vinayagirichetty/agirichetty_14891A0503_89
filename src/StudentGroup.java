@@ -89,7 +89,14 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
-
+if(student==null||index<0||index>=this.students.length) {
+			throw new IllegalArgumentException();
+		}
+		else {
+			ArrayList<Student> sl = new ArrayList<Student>(Arrays.asList(this.students));
+			sl.add(index, student);
+			this.students = sl.toArray(this.students);
+		}
 
 	}
 
